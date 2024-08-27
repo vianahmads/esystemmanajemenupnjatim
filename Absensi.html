@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi</title>
+    <script type="module" src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
+    <script type="module" src="./script/auth.js" defer></script>
+    <script type="module" src="./script/absensi.js" defer></script>
+    <link rel="stylesheet" href="./guaya/gayaku.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo" href="https://ibb.co/J3YJn9Y"><img src="https://i.ibb.co/RjXw2qX/logo.png" alt="logo" border="0">
+            <div class="logotext">Universitas Pembangunan Nasional "Veteran" Jawa Timur</div>
+          </h2>
+        <nav class="navigation">
+            <a href="./dashboard.html">Beranda</a>
+        </nav>
+      </header>
+    <div class="camera">
+    <h1>QR Code Scanner</h1>
+    <select id="camera-select"></select>
+    <video id="video-preview" playsinline></video>
+    <span id="result"></span>
+    </div>
+</body>
+
+</html>

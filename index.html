@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning System Universitas Pembangunan Nasional "Veteran" Jawa Timur</title>
+    <link rel="stylesheet" href="./guaya/gayaku.css">
+</head>
+
+<body>
+  <header>
+    <h2 class="logo" href="https://ibb.co/J3YJn9Y"><img src="https://i.ibb.co/RjXw2qX/logo.png" alt="logo" border="0">
+      <div class="logotext">Universitas Pembangunan Nasional "Veteran" Jawa Timur</div>
+    </h2>
+    <nav class="navigation">
+      <button class="btnLogin-popup">Login</button>
+    </nav>
+  </header>
+      <div class="wrapper">
+        <span class="icon-close">
+          <ion-icon name="close-outline"></ion-icon>
+        </span>
+        <div class="form-box masuk">
+          <h2>Masuk</h2>
+          <form action="" id="masukAkun">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+              <input type="email" id="emaillgn" required>
+              <label for="emaillgn">Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+              <input type="password" id="passlgn" required>
+              <label for="passlgn">Kata Sandi</label>
+            </div>
+            <div class="lupa-ingat">
+              <label><input type="checkbox" id="ingtsya">Ingat Saya</label>
+              <a href="#">Lupa kata sandi?</a>
+            </div>
+            <button type="submit" class="btn">Masuk</button>
+            <div class="masuk-daftar">
+              <p>Belum punya akun? <a href="#" class="register-link">Daftar</a></p>
+            </div>
+            <p class="error pink-text center-align"></p>
+          </form>
+        </div>
+  
+        <div class="form-box daftar">
+          <h2>Daftar</h2>
+          <form action="" id="daftarAkun">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+              <input type="text" id="namadftr" required>
+              <label for="namadftr">Nama Lengkap</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="id-card-outline"></ion-icon></span>
+              <input type="number" id="nimdftr" required>
+              <label for="nimdftr">NIM</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+              <input type="email" id="emaildftr" required>
+              <label for="emaildftr">Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+              <input type="password" id="passdftr" required>
+              <label for="passdftr">Kata Sandi</label>
+            </div>
+            <button type="submit" class="btn">Daftar</button>
+            <div class="masuk-daftar">
+              <p>Sudah punya akun? <a href="#" class="login-link">Masuk</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    <script type="module" src="./script/auth.js" defer></script>
+    <script type="module" src="./script/script.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+  
+  

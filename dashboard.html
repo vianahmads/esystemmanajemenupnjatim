@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script type="module" src="./script/auth.js" defer></script>
+    <script type="module" src="./script/dashboard.js" defer></script>
+    <link rel="stylesheet" href="./guaya/gayaku.css">
+</head>
+
+<body>
+  <header>
+    <h2 class="logo" href="https://ibb.co/J3YJn9Y"><img src="https://i.ibb.co/RjXw2qX/logo.png" alt="logo" border="0">
+      <div class="logotext">Universitas Pembangunan Nasional "Veteran" Jawa Timur</div>
+    </h2>
+    <nav class="navigation">
+      <button class="btnLogout-popup">Logout</button>
+    </nav>
+  </header>
+
+  <div id="dashboard" class="container">
+    <h2>Selamat Datang di Dashboard</h2>
+    <p>NIM: <span id="dashboard-nim"></span></p>
+    <p>Name: <span id="dashboard-name"></span></p>
+
+    <div class="dropdown" id="dropdown-menu">
+      <label for="redirectOptions">Menu</label>
+      <div class="pilihan">
+        <select id="redirectOptions" onchange="navigateToPage()">
+        <option value="" disabled selected>Pilih menu</option>
+        <option value="Absensi.html">Absensi</option>
+        <option value="Materi.html">Materi</option>
+        <option value="Tugas.html">Tugas</option>
+        <option value="Test.html">Test</option>
+        <option value="CekData.html">Cek Data</option>
+      </select> 
+    </div>
+    </div>
+  </div>
+</body>
+
+</html>

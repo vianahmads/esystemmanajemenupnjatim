@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    background: #ffd000;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    padding: 5px 30px;
+    background: rgb(12, 74, 32);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo img {
+    margin-top: -5px;
+    max-width: 9%;
+    height: 9%;
+}
+
+.logotext {
+    margin-left: 75px;
+    margin-top: -62px;
+    max-width: 20%;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    align-items: center;
+    font-size: 1.1em;
+    color: #fff;
+    user-select: none;
+}
+
+/* Navigation styles */
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation a {
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup,
+.navigation .btnLogout-popup {
+    width: 100px;
+    height: 35px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover,
+.navigation .btnLogout-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 767px) {
+
+    .logotext {
+        margin-left: 20px;
+        margin-top: -15px;
+        max-width: 80%;
+    }
+
+    header {
+        padding: 5px 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .navigation a,
+    .navigation .btnLogin-popup,
+    .navigation .btnLogout-popup {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .logo img {
+        display: none;
+    }
+    
+}
+
+.container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 550px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.masuk {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.masuk {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.daftar {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.daftar {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.lupa-ingat {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lupa-ingat label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.lupa-ingat a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.lupa-ingat a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.masuk-daftar {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.masuk-daftar p a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.masuk-daftar p a:hover {
+    text-decoration: underline;
+}
+  
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 150px;
+}
+.pilihan {
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: -20px;
+}
+
+.list-of-materi {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#materi-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    
+}
+
+.materi-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 20px;
+}
+
+.materi-item hr {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.materi-item span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.materi-item strong {
+    color: #333;
+}
